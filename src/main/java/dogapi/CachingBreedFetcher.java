@@ -25,7 +25,7 @@ public class CachingBreedFetcher implements BreedFetcher {
     @Override
     public List<String> getSubBreeds(String breed) {
         if (cache.containsKey(breed.toLowerCase(Locale.ROOT))) {
-            return cache.get(breed);
+            return cache.get(breed.toLowerCase(Locale.ROOT));
         } else {
             this.callsMade++;
             try {
